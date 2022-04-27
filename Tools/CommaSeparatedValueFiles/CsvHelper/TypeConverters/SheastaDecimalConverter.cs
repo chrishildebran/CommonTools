@@ -1,29 +1,36 @@
-﻿// Sheasta Development
-// Solution: CommonTools
-// Project: SheastaTools
-// File Name: SheastaDecimalConverter.cs
-// 
-// Login: CHildebran
-// User Name: Chris Hildebran
-
-using CsvHelper;
-using CsvHelper.Configuration;
-using CsvHelper.TypeConversion;
-
+﻿// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Company:............. J.H. Kelly
+// Department:.......... BIM/VC
+// Website:............. http://www.jhkelly.com
+// Repository:.......... https://github.com/jhkweb/VCS-Kelly-Tools-For-Revit
+// Solution:............ CommonTools
+// Project:............. SheastaTools
+// File:................ SheastaDecimalConverter.cs
+// Edited By:........... Chris Hildebran ✓✓
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 namespace SheastaTools.CommaSeparatedValueFiles.CsvHelper.TypeConverters;
+
+using global::CsvHelper;
+using global::CsvHelper.Configuration;
+using global::CsvHelper.TypeConversion;
 
 public class SheastaDecimalConverter : DecimalConverter
 {
+
 	#region Methods (Non-Private)
 
 	public override object ConvertFromString(string value, IReaderRow row, MemberMapData memberMapData)
 	{
 		var nullEmptyOrWhiteSpace = string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value);
 
-		if(nullEmptyOrWhiteSpace) return 0;
+		if(nullEmptyOrWhiteSpace)
+		{
+			return 0;
+		}
 
 		return decimal.TryParse(value, out var output) ? output : decimal.Zero;
 	}
 
 	#endregion
+
 }

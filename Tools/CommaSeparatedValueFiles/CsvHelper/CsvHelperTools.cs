@@ -1,24 +1,29 @@
-﻿// Sheasta Development
-// Solution: CommonTools
-// Project: SheastaTools
-// File Name: CsvHelperTools.cs
-// 
-// Login: CHildebran
-// User Name: Chris Hildebran
+﻿// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Company:............. J.H. Kelly
+// Department:.......... BIM/VC
+// Website:............. http://www.jhkelly.com
+// Repository:.......... https://github.com/jhkweb/VCS-Kelly-Tools-For-Revit
+// Solution:............ CommonTools
+// Project:............. SheastaTools
+// File:................ CsvHelperTools.cs
+// Edited By:........... Chris Hildebran ✓✓
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+namespace SheastaTools.CommaSeparatedValueFiles.CsvHelper;
 
 using System.Globalization;
+using System.Reflection;
 using System.Text;
-using CsvHelper;
-using CsvHelper.Configuration;
 
-namespace SheastaTools.CommaSeparatedValueFiles.CsvHelper;
+using global::CsvHelper;
+using global::CsvHelper.Configuration;
 
 public static class CsvHelperTools
 {
+
 	#region Methods (Non-Private)
 
 	/// <summary>
-	///     Create Class Map From The Properties Of A Specified Type
+	///         Create Class Map From The Properties Of A Specified Type
 	/// </summary>
 	/// <param name="type"></param>
 	/// <param name="directory"></param>
@@ -26,7 +31,7 @@ public static class CsvHelperTools
 	{
 		var typeName = type.Name;
 
-		var propertyInfos = type.GetProperties();
+		PropertyInfo [ ] propertyInfos = type.GetProperties();
 
 
 		// Index Of Property
@@ -85,12 +90,11 @@ public static class CsvHelperTools
 
 
 	/// <summary>
-	///     Create Class Map From The Header Row of A CSV File
+	///         Create Class Map From The Header Row of A CSV File
 	/// </summary>
 	/// <param name="headerRow"></param>
-	public static void CreateClassMap(string[] headerRow)
-	{
-	}
+	public static void CreateClassMap(string [ ] headerRow) {}
+
 
 	public static void CreateColumnHeaderList(FileInfo file, string directory)
 	{
@@ -107,10 +111,10 @@ public static class CsvHelperTools
 		var sb = new StringBuilder();
 
 		var config = new CsvConfiguration(CultureInfo.InvariantCulture)
-		{
-			HasHeaderRecord   = true,
-			MissingFieldFound = null
-		};
+		             {
+			             HasHeaderRecord   = true,
+			             MissingFieldFound = null
+		             };
 
 		using var reader = new StreamReader(fullPath);
 
@@ -140,4 +144,5 @@ public static class CsvHelperTools
 	}
 
 	#endregion
+
 }
