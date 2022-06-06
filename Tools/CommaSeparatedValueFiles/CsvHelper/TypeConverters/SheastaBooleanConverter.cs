@@ -1,14 +1,4 @@
-﻿// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Company:............. J.H. Kelly
-// Department:.......... BIM/VC
-// Website:............. http://www.jhkelly.com
-// Repository:.......... https://github.com/jhkweb/VCS-Kelly-Tools-For-Revit
-// Solution:............ CommonTools
-// Project:............. SheastaTools
-// File:................ SheastaBooleanConverter.cs
-// Edited By:........... Chris Hildebran ✓✓
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-namespace SheastaTools.CommaSeparatedValueFiles.CsvHelper.TypeConverters;
+﻿namespace Sheasta.Core.CommaSeparatedValueFiles.CsvHelper.TypeConverters;
 
 using global::CsvHelper;
 using global::CsvHelper.Configuration;
