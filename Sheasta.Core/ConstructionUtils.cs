@@ -119,7 +119,7 @@ public static class ConstructionUtils
 
 			if (inches > 0)
 			{
-				// If INches are greater than 0 add the inch value and a space
+				// If Inches are greater than 0 add the inch value and a space
 				stringBuilder.Append(inches);
 				stringBuilder.Append(" ");
 			}

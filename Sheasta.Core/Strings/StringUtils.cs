@@ -97,6 +97,11 @@ public static class StringUtils
 		return cleanString;
 	}
 
+	/// <summary>
+	///     Combines 'IsNullOrEmpty", 'IsNullOrWhiteSpace' to determine if string has content.
+	/// </summary>
+	/// <param name="value"></param>
+	/// <returns></returns>
 	public static bool HasContent(this string value)
 	{
 		if (string.IsNullOrEmpty(value))
